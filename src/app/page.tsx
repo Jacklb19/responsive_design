@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-[#0f0f1a] dark:text-gray-100 flex flex-col lg:flex-row transition-colors duration-300">
       
-      {/* Sidebar Izquierdo */}
       <aside className="hidden lg:flex flex-col top-0 left-0 h-320 w-60 bg-gray-100 dark:bg-[#141421] border-r border-gray-300 dark:border-gray-800 p-6 space-y-10 shadow-2xl">
         <h1 className="text-3xl md:text-4xl font-extrabold text-red-600 dark:text-red-500 tracking-tight">Netflix</h1>
         
@@ -58,15 +57,11 @@ export default function Home() {
         </nav>
       </aside>
 
-      {/* Contenido principal */}
       <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto relative flex flex-col lg:flex-row">
         
-        {/* Contenido central */}
         <div className="flex-1 lg:pr-8">
-          {/* Header */}
           <header className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
             <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-start">
-              {/* Botón menú móvil (solo visual) */}
               <button className="lg:hidden p-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition">
                 <Menu size={22} />
               </button>
@@ -103,7 +98,6 @@ export default function Home() {
             </div>
           </header>
 
-          {/* Hero Section */}
           <section className="relative rounded-2xl overflow-hidden shadow-2xl mb-12 group">
             <Image
               src="/peli.png"
@@ -124,7 +118,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Parties Section */}
           <section className="mb-12">
             <h3 className="text-lg font-bold mb-6">Parties</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -149,7 +142,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Continue Watching Section */}
           <section>
             <h3 className="text-lg font-bold mb-6">Continue Watching</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
@@ -177,7 +169,6 @@ export default function Home() {
           </section>
         </div>
 
-        {/* Sidebar Derecho - Perfiles */}
         <aside className="hidden lg:flex flex-col items-center gap-6 border-l border-gray-300 dark:border-gray-800 pl-6 w-16">
           {["/icon.png", "/icon.png", "/icon.png", "/icon.png"].map((src, i) => (
             <div key={i} className="flex flex-col items-center cursor-pointer hover:opacity-80 transition">
