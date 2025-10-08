@@ -109,7 +109,7 @@ export default function Home() {
 
             <div className="flex items-center gap-3">
               <Image
-                src="/cabron.png"
+                src="/icon.png"
                 alt="Profile"
                 width={40}
                 height={40}
