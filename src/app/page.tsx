@@ -1,27 +1,13 @@
 "use client";
 import Image from "next/image";
-import { Search, Settings, LogOut, Users, List, Play, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Search, Settings, LogOut, Users, List, Play, Menu } from "lucide-react";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-[#0f0f1a] dark:text-gray-100 flex flex-col lg:flex-row transition-colors duration-300">
       
       {/* Sidebar Izquierdo */}
-      <aside
-        className={`fixed lg:static top-0 left-0 h-320 w-60 bg-gray-100 dark:bg-[#141421] border-r border-gray-300 dark:border-gray-800 p-6 space-y-10 shadow-2xl z-50 transform transition-transform duration-300 
-        ${menuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
-      >
-        {/* Botón cerrar en mobile */}
-        <button
-          className="lg:hidden absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"
-          onClick={() => setMenuOpen(false)}
-        >
-          <X size={24} />
-        </button>
-
+      <aside className="hidden lg:flex flex-col top-0 left-0 h-320 w-60 bg-gray-100 dark:bg-[#141421] border-r border-gray-300 dark:border-gray-800 p-6 space-y-10 shadow-2xl">
         <h1 className="text-3xl md:text-4xl font-extrabold text-red-600 dark:text-red-500 tracking-tight">Netflix</h1>
         
         <nav className="space-y-8 text-sm overflow-y-auto max-h-[80vh]">
@@ -60,14 +46,6 @@ export default function Home() {
         </nav>
       </aside>
 
-      {/* Overlay para mobile */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 bg-black/40 dark:bg-black/50 backdrop-blur-sm z-40 lg:hidden"
-          onClick={() => setMenuOpen(false)}
-        ></div>
-      )}
-
       {/* Contenido principal */}
       <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto relative flex flex-col lg:flex-row">
         
@@ -76,11 +54,8 @@ export default function Home() {
           {/* Header */}
           <header className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
             <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-start">
-              {/* Botón menú móvil */}
-              <button
-                className="lg:hidden p-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition"
-                onClick={() => setMenuOpen(true)}
-              >
+              {/* Botón menú móvil (solo visual) */}
+              <button className="lg:hidden p-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition">
                 <Menu size={22} />
               </button>
 
