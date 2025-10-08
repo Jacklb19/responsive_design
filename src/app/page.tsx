@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Search, Settings, LogOut, Users, List, Play, Menu } from "lucide-react";
+import { Search, Settings, LogOut, Users, List, Play, Menu, Film, Bookmark, Clock } from "lucide-react";
 
 export default function Home() {
   return (
@@ -11,14 +11,26 @@ export default function Home() {
         <h1 className="text-3xl md:text-4xl font-extrabold text-red-600 dark:text-red-500 tracking-tight">Netflix</h1>
         
         <nav className="space-y-8 text-sm overflow-y-auto max-h-[80vh]">
-          <div>
-            <p className="uppercase text-gray-500 dark:text-gray-400 text-xs mb-3 tracking-wider">Menu</p>
-            <ul className="space-y-3 font-medium">
-              <li className="text-red-600 dark:text-red-500 hover:text-red-400 cursor-pointer transition-all">• Browse</li>
-              <li className="hover:text-gray-800 dark:hover:text-gray-200 cursor-pointer">• Watchlist</li>
-              <li className="hover:text-gray-800 dark:hover:text-gray-200 cursor-pointer">• Coming Soon</li>
-            </ul>
-          </div>
+
+<div>
+  <p className="uppercase text-gray-500 dark:text-gray-400 text-xs mb-3 tracking-wider">
+    Menu
+  </p>
+  <ul className="space-y-3 font-medium">
+    <li className="flex items-center gap-2 text-red-600 dark:text-red-500 hover:text-red-400 cursor-pointer transition-all">
+      <Film size={16} />
+      <span>Browse</span>
+    </li>
+    <li className="flex items-center gap-2 hover:text-gray-800 dark:hover:text-gray-200 cursor-pointer transition-all">
+      <Bookmark size={16} />
+      <span>Watchlist</span>
+    </li>
+    <li className="flex items-center gap-2 hover:text-gray-800 dark:hover:text-gray-200 cursor-pointer transition-all">
+      <Clock size={16} />
+      <span>Coming Soon</span>
+    </li>
+  </ul>
+</div>
 
           <div>
             <p className="uppercase text-gray-500 dark:text-gray-400 text-xs mb-3 tracking-wider">Social</p>
@@ -94,7 +106,7 @@ export default function Home() {
           {/* Hero Section */}
           <section className="relative rounded-2xl overflow-hidden shadow-2xl mb-12 group">
             <Image
-              src="/cabron.png"
+              src="/peli.png"
               alt="Featured"
               width={1200}
               height={600}
